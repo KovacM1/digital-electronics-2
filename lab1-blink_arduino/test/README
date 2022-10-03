@@ -1,4 +1,4 @@
-# Lab 1: Martin Kováč
+# Lab 1: Josef Komar
 
 ### Morse code
 
@@ -13,15 +13,22 @@ int main(void)
     // Infinite loop
     while (1)
     {
-        // morse lettter A
-        digitalWrite(LED_GREEN, HIGH);
+        // Generate a lettre `A` Morse code
+
+        // Change LED value
+        led_value = HIGH;
+        digitalWrite(LED_GREEN, led_value);
         _delay_ms(SHORT_DELAY);
-        digitalWrite(LED_GREEN, LOW);
-         _delay_ms(PAUSE);
-        digitalWrite(LED_GREEN, HIGH);
+        led_value = LOW;
+        digitalWrite(LED_GREEN, led_value);
+        _delay_ms(SHORT_DELAY);
+        led_value = HIGH;
+        digitalWrite(LED_GREEN, led_value);
         _delay_ms(LONG_DELAY);
-        digitalWrite(LED_GREEN, LOW);
-        _delay_ms(PAUSE);
+        led_value = LOW;
+        digitalWrite(LED_GREEN, led_value);
+        _delay_ms(LONG_DELAY);
+        _delay_ms(LONG_DELAY);
         
 
     }
@@ -30,3 +37,8 @@ int main(void)
     return 0;
 }
 ```
+
+2. Scheme of Morse code application, i.e. connection of AVR device, LED, resistor, and supply voltage. The image can be drawn on a computer or by hand. Always name all components and their values!
+// dokreslit v simullde!
+
+   ![Atmega schema](images/atmega_lab01.png)
