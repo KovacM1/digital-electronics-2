@@ -8,7 +8,7 @@
 /* Defines -----------------------------------------------------------*/
 #define LED_GREEN PB0   // PB5 is AVR pin where green on-board LED 
                         // is connected
-#define SHORT_DELAY 200 // Delay in milliseconds
+#define SHORT_DELAY 300 // Delay in milliseconds
 #define PAUSE 200 // Delay in milliseconds
 #define LONG_DELAY 600 // Delay in milliseconds
 #ifndef F_CPU
