@@ -49,3 +49,4 @@ int main(void)
   
 <img width="382" alt="Snímka obrazovky 2022-10-04 o 18 28 46" src="https://user-images.githubusercontent.com/99388246/193874239-a5b167c8-fc88-46b4-928b-5e629d6c0ab2.png">
 
+![IMG_4354](https://user-images.githubusercontent.com/99388246/193876683-d26d38ac-82b3-4444-b107-41ad158c9e1c.JPG)
