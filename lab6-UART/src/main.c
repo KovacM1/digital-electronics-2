@@ -34,19 +34,18 @@
  **********************************************************************/
 int main(void)
 {
-    // Initialize USART to asynchronous, 8N1, 9600
+    // Initialize UART to asynchronous, 8N1, 9600
     uart_init(UART_BAUD_SELECT(9600, F_CPU));
     
     // Configure 16-bit Timer/Counter1 to transmit UART data
     // Set prescaler to 262 ms and enable overflow interrupt
-
+    TIM1_overflow_262ms();
+    TIM1_overflow_interrupt_enable();
 
     // Enables interrupts by setting the global interrupt mask
     sei();
 
     // Put strings to ringbuffer for transmitting via UART
-    uart_puts("Print one line... ");
-    uart_puts("done\r\n");
 
     // Infinite loop
     while (1)
@@ -66,5 +65,24 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    // Transmit UART string(s)
+    uint8_t value;
+    char string[8];  // String for converted numbers by itoa()
+
+    value = uart_getc();
+    if (value != '\0') {  // Data available from UART
+        // Display ASCII code of received character
+        // WRITE YOUR CODE HERE
+
+      itoa(value, string, 10);
+      uart_puts(string);
+      uart_puts("\t0x");
+
+      itoa(value, string, 16);
+      uart_puts(string);
+      uart_puts("\t0b");
+
+      itoa(value, string, 2);
+      uart_puts(string);
+      uart_puts("\r\n");
+    }
 }
